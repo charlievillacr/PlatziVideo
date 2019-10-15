@@ -278,3 +278,18 @@ npm install --save react react-dom
 - Entorno de trabajo
 
 - npm install webpack webpack-cli html-webpack-plugin html-loader --save-dev
+
+## Clase 11 - Webpack Dev Server: Reporte de errores y Cambios en tiempo real
+
+- Instalación de Webpack Dev Server: Reporte de errores y Cambios en tiempo real
+
+- npm install --save-dev webpack-server
+
+- Script para ejecutar el servidor de Webpack y visualizar los camjios en tiempo real (package.json)
+
+{
+  "scripts: {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --open --mode development"
+  }
+}
