@@ -293,3 +293,54 @@ npm install --save react react-dom
     "start": "webpack-dev-server --open --mode development"
   }
 }
+
+## Clase 12 - Estilos con SASS
+
+- Los preprocesadores como Sass son herramientas que nos permiten escribir CSS con una sintaxis un poco diferente y más amigable que luego se transformará en CSS normal. Gracias a Sass podemos escribir CSS con variables, mixins, bucles, entre otras características.
+
+- Instalación de Sass
+
+- npm install --save-dev mini-css-extract-plugin css-loader node-sass sass-loader --save-dev
+
+- Configuración de Sass en Webpack (webpack.config.js):
+
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+// ...
+
+module: {
+  rules: [
+    {
+      test: /\.(s*)css$/,
+      use: [
+        { loader: MiniCssExtractPlugin.loader },
+        'css-loader',
+        'sass-loader',
+      ],
+    },
+  ],
+},
+
+// ...
+
+plugins: [
+  new MiniCssExtractPlugin({
+    filename: 'assets/[name].css',
+  }),
+],`
+
+## EsLint
+
+- Los linters como ESLint son herramientas que nos ayudan a seguir buenas prácticas o guías de estilo de nuestro código.
+
+- Se encargan de revisar el código que escribimos para indicarnos dónde tenemos errores o posibles errores. En algunos casos también pueden solucionar los errores automáticamente. De esta manera podemos solucionar los errores incluso antes de que sucedan.
+
+- Instalación de ESLint:
+
+- npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y
+
+- Podemos configurar las reglas de ESLint en el archivo .eslintrc.
+
+## .gitignore
+
+El Git Ignore es un archivo que nos permite definir qué archivos NO queremos publicar en nuestros repositorios. Solo debemos crear el archivo .gitignore y escribir los nombres de los archivos y/o carpetas que no queremos publicar.
